@@ -36,8 +36,10 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $("#hero").text("Your Victorious Hero!");
                     $(".EnemyRow").hide();
                     $("#attack").hide();
+                    return "end";
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -54,7 +56,8 @@ $(document).ready(function() {
             this.attackPoints = this.attackPoints + this.attackPower;
             var damage = this.attackPoints;
             //deal damage to target
-            target.takeDamageBot(damage);
+            var result = target.takeDamageBot(damage);
+            if(result === "end") {return;}
             //receive damage from target
             this.getHitMain(target.counterAttack);
         }
@@ -90,8 +93,10 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $("#hero").text("Your Victorious Hero!");
                     $(".EnemyRow").hide();
                     $("#attack").hide();
+                    return "end";
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -108,7 +113,8 @@ $(document).ready(function() {
             this.attackPoints = this.attackPoints + this.attackPower;
             var damage = this.attackPoints;
             //deal damage to target
-            target.takeDamageBot(damage);
+            var result = target.takeDamageBot(damage);
+            if(result === "end") {return;}
             //receive damage from target
             this.getHitMain(target.counterAttack);
         }
@@ -144,8 +150,10 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $("#hero").text("Your Victorious Hero!");
                     $(".EnemyRow").hide();
                     $("#attack").hide();
+                    return "end";
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -162,7 +170,8 @@ $(document).ready(function() {
             this.attackPoints = this.attackPoints + this.attackPower;
             var damage = this.attackPoints;
             //deal damage to target
-            target.takeDamageBot(damage);
+            var result = target.takeDamageBot(damage);
+            if(result === "end") {return;}
             //receive damage from target
             this.getHitMain(target.counterAttack);
         }
@@ -198,8 +207,10 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $("#hero").text("Your Victorious Hero!");
                     $(".EnemyRow").hide();
                     $("#attack").hide();
+                    return "end";
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -218,7 +229,8 @@ $(document).ready(function() {
             this.attackPoints = this.attackPoints + this.attackPower;
             var damage = this.attackPoints;
             //deal damage to target
-            target.takeDamageBot(damage);
+            var result = target.takeDamageBot(damage);
+            if(result === "end") {return;}
             //receive damage from target
             this.getHitMain(target.counterAttack);
         }
@@ -254,8 +266,10 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $("#hero").text("Your Victorious Hero!");
                     $(".EnemyRow").hide();
                     $("#attack").hide();
+                    return "end";
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -273,7 +287,8 @@ $(document).ready(function() {
             this.attackPoints = this.attackPoints + this.attackPower;
             var damage = this.attackPoints;
             //deal damage to target
-            target.takeDamageBot(damage);
+            var result = target.takeDamageBot(damage);
+            if(result === "end") {return;}
             //receive damage from target
             this.getHitMain(target.counterAttack);
         }
