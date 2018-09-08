@@ -13,17 +13,35 @@ $(document).ready(function() {
         // How your character deals with damage
         getHitMain: function(damage){
             this.healthPoints = this.healthPoints - damage;
+            $(".heroHP").text("HP: " + this.healthPoints);
             if(this.healthPoints <= 0){
                 //you are dead
                 //game over
+                alert("You Lose! Refresh to try again.");
+                //reset
             }
         },
         takeDamageBot: function(damage){
             //take damage as a bot
             this.healthPoints = this.healthPoints - damage;
+            $(".enemyHP").text("HP: " + this.healthPoints);
             if(this.healthPoints <= 0){
                 //you've defeated the bot
                 //select new enemy or victory
+                defeatedEnemies.push(this.name);
+                //if array length reaches 4 you win
+                if(defeatedEnemies.length === 4){
+                    //Win condition
+                    alert("You Win!");
+                } else{
+                    //reset enemy selection
+                    var choiceName = '#' + currentEnemy.name + 'Enemy';
+                    $(choiceName).attr("class", "defeatedEnemy col-md-2");
+                    $(".enemySelect").show();
+                    $(".defeatedEnemy").hide();
+                    $(".enemyHP").hide();
+                    $("#EnemyTitle").text("Select Next Enemy!");
+                }
             }
         },
         attack: function(target){
@@ -47,17 +65,34 @@ $(document).ready(function() {
         // How your character deals with damage
         getHitMain: function(damage){
             this.healthPoints = this.healthPoints - damage;
+            $(".heroHP").text("HP: " + this.healthPoints);
             if(this.healthPoints <= 0){
                 //you are dead
                 //game over
+                alert("You Lose! Refresh to try again.");
             }
         },
         takeDamageBot: function(damage){
             //take damage as a bot
             this.healthPoints = this.healthPoints - damage;
+            $(".enemyHP").text("HP: " + this.healthPoints);
             if(this.healthPoints <= 0){
                 //you've defeated the bot
                 //select new enemy or victory
+                defeatedEnemies.push(this.name);
+                //if array length reaches 4 you win
+                if(defeatedEnemies.length === 4){
+                    //Win condition
+                    alert("You Win!");
+                } else{
+                    //reset enemy selection
+                    var choiceName = '#' + currentEnemy.name + 'Enemy';
+                    $(choiceName).attr("class", "defeatedEnemy col-md-2");
+                    $(".enemySelect").show();
+                    $(".defeatedEnemy").hide();
+                    $(".enemyHP").hide();
+                    $("#EnemyTitle").text("Select Next Enemy!");
+                }
             }
         },
         attack: function(target){
@@ -81,17 +116,34 @@ $(document).ready(function() {
         // How your character deals with damage
         getHitMain: function(damage){
             this.healthPoints = this.healthPoints - damage;
+            $(".heroHP").text("HP: " + this.healthPoints);
             if(this.healthPoints <= 0){
                 //you are dead
                 //game over
+                alert("You Lose! Refresh to try again.");
             }
         },
         takeDamageBot: function(damage){
             //take damage as a bot
             this.healthPoints = this.healthPoints - damage;
+            $(".enemyHP").text("HP: " + this.healthPoints);
             if(this.healthPoints <= 0){
                 //you've defeated the bot
                 //select new enemy or victory
+                defeatedEnemies.push(this.name);
+                //if array length reaches 4 you win
+                if(defeatedEnemies.length === 4){
+                    //Win condition
+                    alert("You Win!");
+                } else{
+                    //reset enemy selection
+                    var choiceName = '#' + currentEnemy.name + 'Enemy';
+                    $(choiceName).attr("class", "defeatedEnemy col-md-2");
+                    $(".enemySelect").show();
+                    $(".defeatedEnemy").hide();
+                    $(".enemyHP").hide();
+                    $("#EnemyTitle").text("Select Next Enemy!");
+                }
             }
         },
         attack: function(target){
@@ -115,17 +167,36 @@ $(document).ready(function() {
         // How your character deals with damage
         getHitMain: function(damage){
             this.healthPoints = this.healthPoints - damage;
+            $(".heroHP").text("HP: " + this.healthPoints);
             if(this.healthPoints <= 0){
                 //you are dead
                 //game over
+                alert("You Lose! Refresh to try again.");
             }
         },
         takeDamageBot: function(damage){
             //take damage as a bot
             this.healthPoints = this.healthPoints - damage;
+            $(".enemyHP").text("HP: " + this.healthPoints);
             if(this.healthPoints <= 0){
                 //you've defeated the bot
                 //select new enemy or victory
+                defeatedEnemies.push(this.name);
+                //if array length reaches 4 you win
+                if(defeatedEnemies.length === 4){
+                    //Win condition
+                    alert("You Win!");
+                } else{
+                    //reset enemy selection
+                    var choiceName = '#' + currentEnemy.name + 'Enemy';
+                    $(choiceName).attr("class", "defeatedEnemy col-md-2");
+                    $(".enemySelect").show();
+                    $(".defeatedEnemy").hide();
+                    $(".enemyHP").hide();
+                    $("#EnemyTitle").text("Select Next Enemy!");
+                }
+                
+
             }
         },
         attack: function(target){
@@ -153,14 +224,31 @@ $(document).ready(function() {
             if(this.healthPoints <= 0){
                 //you are dead
                 //game over
+                alert("You Lose! Refresh to try again.");
             }
         },
         takeDamageBot: function(damage){
             //take damage as a bot
             this.healthPoints = this.healthPoints - damage;
+            $(".enemyHP").text("HP: " + this.healthPoints);
             if(this.healthPoints <= 0){
                 //you've defeated the bot
                 //select new enemy or victory
+                defeatedEnemies.push(this.name);
+                //if array length reaches 4 you win
+                if(defeatedEnemies.length === 4){
+                    //Win condition
+                    alert("You Win!");
+                } else{
+                    //reset enemy selection
+                    var choiceName = '#' + currentEnemy.name + 'Enemy';
+                    $(choiceName).attr("class", "defeatedEnemy col-md-2");
+                    $(".enemySelect").show();
+                    $(".defeatedEnemy").hide();
+                    $(".enemyHP").hide();
+                    $("#EnemyTitle").text("Select Next Enemy!");
+                }
+                
             }
         },
         attack: function(target){
@@ -174,6 +262,8 @@ $(document).ready(function() {
 
     };
     var hero;
+    var currentEnemy;
+    var defeatedEnemies = [];
     //Select Hero area
     $("#class1Select").on("click", function(){
         selectHero(class1);
@@ -191,19 +281,61 @@ $(document).ready(function() {
         selectHero(class5);
     });
 
+    //Select Enemy
+    $("#class1Enemy").on("click", function(){
+        selectEnemy(class1);
+    });
+    $("#class2Enemy").on("click", function(){
+        selectEnemy(class2);
+    });
+    $("#class3Enemy").on("click", function(){
+        selectEnemy(class3);
+    });
+    $("#class4Enemy").on("click", function(){
+        selectEnemy(class4);
+    });
+    $("#class5Enemy").on("click", function(){
+        selectEnemy(class5);
+    });
+
     function selectHero(choice){
-        // alert("here");
         hero = choice;
         var choiceName = '#' + hero.name + 'Select';
-        // console.log(choiceName)
+        var enemySelf = '#' + hero.name + 'Enemy';
         $(choiceName).attr("class", "chosen col-md-2");
         //hide divs other than your hero
         $(".classSelect").hide();
+        //hide enemy self
+        // $(enemySelf).hide();
+        $(enemySelf).attr("class", "defeatedEnemy col-md-2");
+        $(".defeatedEnemy").hide();
         $(".chosen").show();
         $("#hero").text("Your Chosen Hero!");
         $(".heroHP").text("HP: " + choice.healthPoints);
     };
 
+    function selectEnemy(choice){
+        currentEnemy = choice;
+        var choiceName = '#' + currentEnemy.name + 'Enemy';
+        $(choiceName).attr("class", "chosenEnemy col-md-2");
+        //hide divs other than your hero
+        $(".enemySelect").hide();
+        $(".chosenEnemy").show();
+        $("#EnemyTitle").text("Your Chosen Enemy!");
+        $(".enemyHP").show();
+        $(".enemyHP").text("HP: " + choice.healthPoints);
+    };
+
+    function attackButton(hero, enemy){
+        //main attack button 
+        //hero attacks enemy
+        hero.attack(enemy);
+        
+    };
+
+    $("#attack").on("click", function(){
+        attackButton(hero, currentEnemy);
+    });
 
     
 
