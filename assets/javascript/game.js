@@ -1,6 +1,9 @@
 
 //$(document).ready();
 $(document).ready(function() {
+    //start with hidden enemies and attack
+    $(".EnemyRow").hide();
+    $("#attack").hide();
     //start with character objects
 
     var class1 = {
@@ -33,6 +36,8 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $(".EnemyRow").hide();
+                    $("#attack").hide();
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -41,6 +46,7 @@ $(document).ready(function() {
                     $(".defeatedEnemy").hide();
                     $(".enemyHP").hide();
                     $("#EnemyTitle").text("Select Next Enemy!");
+                    $("#attack").hide();
                 }
             }
         },
@@ -84,6 +90,8 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $(".EnemyRow").hide();
+                    $("#attack").hide();
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -92,6 +100,7 @@ $(document).ready(function() {
                     $(".defeatedEnemy").hide();
                     $(".enemyHP").hide();
                     $("#EnemyTitle").text("Select Next Enemy!");
+                    $("#attack").hide();
                 }
             }
         },
@@ -135,6 +144,8 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $(".EnemyRow").hide();
+                    $("#attack").hide();
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -143,6 +154,7 @@ $(document).ready(function() {
                     $(".defeatedEnemy").hide();
                     $(".enemyHP").hide();
                     $("#EnemyTitle").text("Select Next Enemy!");
+                    $("#attack").hide();
                 }
             }
         },
@@ -186,6 +198,8 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $(".EnemyRow").hide();
+                    $("#attack").hide();
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -194,6 +208,7 @@ $(document).ready(function() {
                     $(".defeatedEnemy").hide();
                     $(".enemyHP").hide();
                     $("#EnemyTitle").text("Select Next Enemy!");
+                    $("#attack").hide();
                 }
                 
 
@@ -239,6 +254,8 @@ $(document).ready(function() {
                 if(defeatedEnemies.length === 4){
                     //Win condition
                     alert("You Win!");
+                    $(".EnemyRow").hide();
+                    $("#attack").hide();
                 } else{
                     //reset enemy selection
                     var choiceName = '#' + currentEnemy.name + 'Enemy';
@@ -247,6 +264,7 @@ $(document).ready(function() {
                     $(".defeatedEnemy").hide();
                     $(".enemyHP").hide();
                     $("#EnemyTitle").text("Select Next Enemy!");
+                    $("#attack").hide();
                 }
                 
             }
@@ -312,6 +330,7 @@ $(document).ready(function() {
         $(".chosen").show();
         $("#hero").text("Your Chosen Hero!");
         $(".heroHP").text("HP: " + choice.healthPoints);
+        $(".EnemyRow").show();
     };
 
     function selectEnemy(choice){
@@ -324,6 +343,7 @@ $(document).ready(function() {
         $("#EnemyTitle").text("Your Chosen Enemy!");
         $(".enemyHP").show();
         $(".enemyHP").text("HP: " + choice.healthPoints);
+        $("#attack").show();
     };
 
     function attackButton(hero, enemy){
